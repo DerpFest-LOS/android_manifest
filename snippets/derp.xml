@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote 
+    name="derp"
+    fetch="ssh://git@github.com/DerpFest-AOSP"
+    revision="16.1" />
+
+  <remote 
+    name="derplab"
+    fetch="https://github.com/DerpFest-LOS"
+    revision="16.1" />
+
+  <remote
+    name="derp-devices"
+    fetch="https://github.com/DerpFest-Devices"
+    revision="16" />
+
+  <remote
+    name="gitlab"
+    fetch="https://gitlab.com/" />
+
+  <project path="android" name="android_manifest" remote="derplab" />
+
+  <project path="bionic" name="priv_android_bionic" groups="pdk" remote="derp" />
+
+  <project path="bootable/recovery" name="priv_android_bootable_recovery" groups="pdk" remote="derp" />
+
+  <project path="build/make" name="priv_android_build" groups="pdk,sysui-studio" remote="derp" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <project path="build/soong" name="priv_android_build_soong" groups="pdk,tradefed,sysui-studio" remote="derp" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <project path="development" name="priv_android_development" groups="developers,pdk-cw-fs,pdk-fs,sysui-studio" remote="derp" />
+
+  <project path="device/generic/common" name="priv_android_device_generic_common" groups="pdk" remote="derp" />
+  <project path="device/generic/goldfish" name="priv_android_device_generic_goldfish" groups="pdk" remote="derp" />
+  <project path="device/lineage/sepolicy" name="priv_android_device_derpfest_sepolicy" remote="derp" />
+
+  <project path="external/avb" name="priv_android_external_avb" groups="pdk" remote="derp" />
+  <project path="external/bouncycastle" name="priv_android_external_bouncycastle" groups="pdk" remote="derp" />
+  <project path="external/e2fsprogs" name="priv_android_external_e2fsprogs" groups="pdk" remote="derp" />
+  <project path="external/setupcompat" name="priv_android_external_setupcompat" groups="pdk,sysui-studio" remote="derp" />
+  <project path="external/wpa_supplicant_8" name="priv_android_external_wpa_supplicant_8" groups="pdk" remote="derp" />
+  <project path="external/zstd" name="priv_android_external_zstd" remote="derp" />
+
+  <project path="frameworks/av" name="priv_android_frameworks_av" groups="pdk,sysui-studio" remote="derp" />
+  <project path="frameworks/base" name="lineage_android_frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="derp" />
+  <project path="frameworks/libs/systemui" name="priv_android_frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="derp" />
+  <project path="frameworks/native" name="priv_android_frameworks_native" groups="pdk" remote="derp" />
+  <project path="frameworks/opt/telephony" name="priv_android_frameworks_opt_telephony" groups="pdk,sysui-studio" remote="derp" />
+
+  <project path="hardware/google/camera" name="priv_android_hardware_google_camera" groups="pdk" remote="derp" />
+  <project path="hardware/google/pixel" name="priv_android_hardware_google_pixel" groups="generic_fs,pixel,pdk-gs-arm,pdk-gs-imgtec,pdk-desktop" remote="derp" />
+  <project path="hardware/google/pixel-sepolicy" name="priv_android_hardware_google_pixel-sepolicy" groups="generic_fs,pixel,pdk-desktop" remote="derp" />
+  <project path="hardware/interfaces" name="priv_android_hardware_interfaces" groups="pdk,sysui-studio" remote="derp" />
+  <project path="hardware/libhardware" name="priv_android_hardware_libhardware" groups="pdk" remote="derp" />
+  <project path="hardware/lineage/compat" name="priv_android_hardware_lineage_compat" remote="derp" />
+  <project path="hardware/qcom/wlan" name="priv_android_hardware_qcom_wlan" groups="qcom,qcom_wlan,pdk-qcom" remote="derp" />
+
+  <project path="lineage-sdk" name="priv_android_lineage-sdk" remote="derp" />
+
+  <project path="packages/apps/Aperture" name="priv_android_packages_apps_Aperture" remote="derp" />
+  <project path="packages/apps/Car/SystemUI" name="priv_android_packages_apps_Car_SystemUI" groups="pdk-fs,pdk-cw-tvc" remote="derp" />
+  <project path="packages/apps/CellBroadcastReceiver" name="priv_android_packages_apps_CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/apps/ColumbusService" name="android_packages_apps_ColumbusService" remote="derp" revision="16" />
+  <project path="packages/apps/Contacts" name="priv_android_packages_apps_Contacts" groups="pdk-fs" remote="derp" />
+  <project path="packages/apps/DerpWalls" name="packages_apps_DerpWalls" remote="derp" revision="15" />
+  <project path="packages/apps/Dialer" name="priv_android_packages_apps_Dialer" groups="pdk-fs" remote="derp" />
+  <project path="packages/apps/DocumentsUI" name="priv_android_packages_apps_DocumentsUI" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/apps/EmergencyInfo" name="priv_android_packages_apps_EmergencyInfo" groups="pdk-fs" remote="derp" />
+  <project path="packages/apps/FaceUnlock" name="priv_android_packages_apps_FaceUnlock" remote="derp" />
+  <project path="packages/apps/GameSpace" name="priv_android_packages_apps_GameSpace" remote="derp" />
+  <project path="packages/apps/Launcher3" name="priv_android_packages_apps_DerpLauncher" groups="pdk-fs,sysui-studio,pdk-cw-tvc" remote="derp" />
+  <project path="packages/apps/LineageParts" name="priv_android_packages_apps_LineageParts" remote="derp" />
+  <project path="packages/apps/LMOSystemUIClock" name="priv_android_packages_apps_LMOSystemUIClock" remote="derp" />
+  <project path="packages/apps/Panic" name="packages_apps_Panic" remote="derp" revision="15" />
+  <project path="packages/apps/Prospect" name="android_packages_apps_Prospect" remote="derp" revision="16" />
+  <project path="packages/apps/Ripple" name="packages_apps_Ripple" remote="derp" revision="15" />
+  <project path="packages/apps/Settings" name="lineage_android_packages_apps_Settings" groups="pdk-fs,pdk-cw-tvc,sysui-studio" remote="derp" />
+  <project path="packages/apps/ThemePicker" name="priv_android_packages_apps_ThemePicker" groups="pdk-fs,sysui-studio" remote="derp" />
+  <project path="packages/apps/Updater" name="priv_android_packages_apps_Updater" remote="derp" />
+  <project path="packages/apps/WallpaperPicker2" name="priv_android_packages_apps_WallpaperPicker2" groups="pdk-fs,sysui-studio" remote="derp" />
+
+  <project path="packages/modules/adb" name="priv_android_packages_modules_adb" groups="pdk" remote="derp" />
+  <project path="packages/modules/Bluetooth" name="priv_android_packages_modules_Bluetooth" groups="pdk" remote="derp" />
+  <project path="packages/modules/common" name="priv_android_packages_modules_common" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/modules/Connectivity" name="priv_android_packages_modules_Connectivity" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/modules/Permission" name="priv_android_packages_modules_Permission" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/modules/UprobeStats" name="priv_android_packages_modules_UprobeStats" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/modules/Wifi" name="priv_android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="derp" />
+
+  <project path="packages/providers/DownloadProvider" name="priv_android_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/providers/MediaProvider" name="priv_android_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+
+  <project path="packages/services/Car" name="priv_android_packages_services_Car" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/services/DeviceAsWebcam" name="priv_android_packages_services_DeviceAsWebcam" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/services/Mms" name="priv_android_packages_services_Mms" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/services/Telecomm" name="priv_android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+  <project path="packages/services/Telephony" name="priv_android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="derp" />
+
+  <project path="system/chre" name="priv_android_system_chre" groups="pdk" remote="derp" />
+  <project path="system/core" name="priv_android_system_core" groups="pdk" remote="derp" />
+  <project path="system/keymaster" name="priv_android_system_keymaster" groups="pdk" remote="derp" />
+  <project path="system/libziparchive" name="priv_android_system_libziparchive" groups="pdk" remote="derp" />
+  <project path="system/logging" name="priv_android_system_logging" groups="pdk" remote="derp" />
+  <project path="system/media" name="priv_android_system_media" groups="pdk" remote="derp" />
+  <project path="system/netd" name="priv_android_system_netd" groups="pdk" remote="derp" />
+  <project path="system/security" name="priv_android_system_security" groups="pdk" remote="derp" />
+  <project path="system/sepolicy" name="priv_android_system_sepolicy" groups="pdk" remote="derp" />
+  <project path="system/update_engine" name="priv_android_system_update_engine" groups="pdk" remote="derp" />
+  <project path="system/vold" name="priv_android_system_vold" groups="pdk" remote="derp" />
+
+  <project path="vendor/certification" name="priv_android_vendor_certification" remote="derp" />
+  <project path="vendor/fontage" name="vendor_fontage" remote="derp" revision="16" />
+  <project path="vendor/lineage" name="priv_android_vendor_derpfest" remote="derp" />
+  <project path="vendor/overlay" name="android_vendor_overlay" remote="derp" revision="16" />
+  <project path="vendor/support" name="priv_android_vendor_support" remote="derp" />
+
+  <project path="vendor/google/prebuilt" name="DerpFest/vendor_google_prebuilt" remote="gitlab" revision="15" />
+  <project path="vendor/google/gms" name="DerpFest/vendor_google_gms" remote="gitlab" revision="16" clone-depth="1" />
+  <project path="vendor/google/pixel" name="priv_android_vendor_google_pixel" remote="derp" clone-depth="1" />
+
+  <project path="vendor/qcom/opensource/commonsys-intf/display" name="priv_android_vendor_qcom_opensource_display-commonsys-intf" groups="qcom,qssi" remote="derp" />
+
+
+</manifest>
